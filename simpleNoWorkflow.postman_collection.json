@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "41b1aaad-9655-421e-a814-9fe2e27d0574",
+		"name": "simpleNoWorkflow",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24769043"
+	},
+	"item": [
+		{
+			"name": "Request 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"console.log(pm.info.requestName);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "example.com",
+					"host": [
+						"example",
+						"com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"console.log(pm.info.requestName);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "example.com",
+					"host": [
+						"example",
+						"com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"console.log(pm.info.requestName);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "example.com",
+					"host": [
+						"example",
+						"com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request 4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"console.log(pm.info.requestName);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "example.com",
+					"host": [
+						"example",
+						"com"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
