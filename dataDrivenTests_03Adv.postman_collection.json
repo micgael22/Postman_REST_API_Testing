@@ -1,0 +1,188 @@
+{
+	"info": {
+		"_postman_id": "1fd9511a-be6e-4131-97cf-ea5d439f4e1c",
+		"name": "dataDrivenTests_03Adv",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24769043"
+	},
+	"item": [
+		{
+			"name": "Generate Reference 03",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"uuid\": \"daf5826c-afbf-45f0-ba5f-3fleab0de522\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "httpbin.org/uuid",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"uuid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create order 03",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();\r",
+							"\r",
+							"//if (pm.variables.get(\"isValid\") == \"true\")\r",
+							"if (pm.variables.get(\"isValid\")) {\r",
+							"    pm.test(\"Should contain the reference id\", function () {\r",
+							"    pm.expect(response.json.referenceId).to.eql(pm.globals.get(\"referenceId\"));\r",
+							"});\r",
+							"\r",
+							"    pm.test(\"Should contain the customer id\", function () {\r",
+							"    pm.expect(response.json.customerId).to.eql(parseInt(pm.variables.get(\"customerId\")));\r",
+							"});\r",
+							"\r",
+							"    pm.test(\"Should contain the product id\", function () {\r",
+							"    pm.expect(response.json.productId).to.eql(parseInt(pm.variables.get(\"productId\")));\r",
+							"});\r",
+							"} else {\r",
+							"    pm.test(\"Should not be valid\", function () {\r",
+							"    pm.expect(response.json).to.be.null;\r",
+							"    });\r",
+							"}\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.variables.set('metaInfo', JSON.stringify(pm.iterationData.get('metaInfo')));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"referenceId\": \"{{referenceId}}\",\r\n    \"customerId\": {{customerId}},\r\n    \"productId\": {{productId}},\r\n    \"metaInfo\": {{metaInfo}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "httpbin.org/post",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check Status 03",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is \" + pm.iterationData.get('expectedStatus'), function () {\r",
+							"    pm.response.to.have.status(pm.iterationData.get('expectedStatus'));\r",
+							"}); "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "httpbin.org/status/{{status}} ",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"status",
+						"{{status}} "
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "customerId",
+			"value": "100",
+			"type": "string"
+		},
+		{
+			"key": "productId",
+			"value": "200",
+			"type": "string"
+		},
+		{
+			"key": "isValid",
+			"value": "true",
+			"type": "string"
+		}
+	]
+}
