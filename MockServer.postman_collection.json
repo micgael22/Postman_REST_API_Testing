@@ -1,0 +1,232 @@
+{
+	"info": {
+		"_postman_id": "931c9e2c-0151-48d8-a845-dbc26e0bee4d",
+		"name": "MockServer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24769043"
+	},
+	"item": [
+		{
+			"name": "users/1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/users/fsfsd7867",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"fsfsd7867"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "notFound",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "text/html",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"error\": \"Not found\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "html"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users/fsfsd7867",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"fsfsd7867"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 26 Jan 2023 20:03:28 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "14"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-srv-trace",
+							"value": "v=1;t=09d4d1d9b5943062"
+						},
+						{
+							"key": "x-srv-span",
+							"value": "v=1;s=9d55e9f2311b9a0a"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "120"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "119"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1674763468"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e-z/rGfhpPIdvDGC5xy1suCSmB/pQ\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						}
+					],
+					"cookie": [],
+					"body": "This is Not Found"
+				},
+				{
+					"name": "users/2",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/users/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"2"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "This is user 2"
+				},
+				{
+					"name": "users/1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/users/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 26 Jan 2023 20:03:28 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "14"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "x-srv-trace",
+							"value": "v=1;t=09d4d1d9b5943062"
+						},
+						{
+							"key": "x-srv-span",
+							"value": "v=1;s=9d55e9f2311b9a0a"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "120"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "119"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1674763468"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e-z/rGfhpPIdvDGC5xy1suCSmB/pQ\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						}
+					],
+					"cookie": [],
+					"body": "This is user 1"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://2587f598-c15d-4805-a77d-7b510084ca49.mock.pstmn.io"
+		}
+	]
+}
